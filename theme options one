@@ -1,0 +1,111 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK SETTINGS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$settings           = array(
+  'menu_title'      => 'theme Options',
+  'menu_type'       => 'theme', // menu, submenu, options, theme, etc.
+  'menu_slug'       => 'neuron-theme-options',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Neuron Theme <small>by Amzad Hosen</small>',
+);
+
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK OPTIONS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$options        = array();
+
+// ----------------------------------------
+// a option section for options overview  -
+// ----------------------------------------
+$options[]      = array(
+  'name'        => 'homepage',
+  'title'       => 'Home Page',
+  'icon'        => 'fa fa-home',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'promo_title',
+      'type'    => 'text',
+      'title'   => 'Promo area title',
+      'desc'   => ' Type Promo area title',
+      'default'   => ' Welcome to the Neuron Finance',
+    ),
+    // end: a field
+
+    array(
+      'id'      => 'promo_content',
+      'type'    => 'textarea',
+      'title'   => 'Promo Content',
+      'desc'    => 'Type Promo Content Hear',
+    ),
+    array(
+      'id'      => 'agency_title',
+      'type'    => 'text',
+      'title'   => 'Agency Title',
+      'desc'    => 'Type Agency title Hear',
+    ),
+    array(
+      'id'      => 'agency_content',
+      'type'    => 'textarea',
+      'title'   => 'Agency Content',
+      'desc'    => 'Type Agency Content Hear',
+    ),  
+      array(
+      'id'      => 'agency_img',
+      'type'    => 'image',
+      'title'   => 'Agency image',
+      'desc'    => 'upload Agency image Hear',
+    ),
+
+      array(
+      'id'      => 'services_title',
+      'type'    => 'text',
+      'title'   => 'Services Title',
+      'desc'    => 'Tyoe Services Title Hear',
+    ),
+
+
+      array(
+      'id'      => 'services_content',
+      'type'    => 'textarea',
+      'title'   => 'Services Content',
+      'desc'    => 'Tyoe Services Content Hear',
+    ),
+
+
+  ), // end: fields
+);
+
+
+$options[]      = array(
+  'name'        => 'service',
+  'title'       => 'Service Page',
+  'icon'        => 'fa fa-star',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'service_titles',
+      'type'    => 'text',
+      'title'   => 'Promo area title',
+      'desc'   => ' Type Promo area title',
+    ),
+
+
+  ), // end: fields
+);
+
+
+
+CSFramework::instance( $settings, $options );
