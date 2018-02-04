@@ -1,0 +1,62 @@
+//      About Faqs Section
+      
+     array(
+      'id'      => 'faqs',
+      'type'    => 'group',
+      'title'   => 'Faqs',
+      'button_title'   => 'Add New',
+      'accordion_title' => 'Add New FAQ',
+      'fields'          => array(
+        array(
+          'id'    => 'faq_title',
+          'type'  => 'text',
+          'title' => 'FAQ Title ',
+        ),
+        array(
+          'id'    => 'faq_content',
+          'type'  => 'textarea',
+          'title' => 'FAQ Content',
+        )
+      )
+    ),
+
+
+                 <div class="accorian-item">
+
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                            <?php 
+                                $faq_no = 0 ;
+                                    $faqs = cs_get_option('faqs');
+                                    foreach($faqs as $faq) :
+                                    $faq_no++;
+                                if($faq_no == 1){
+                                    $aria_expanded = 'true';
+                                    $in_class = 'in';
+                                }else{
+                                    
+                                    $aria_expanded = 'false';
+                                    $in_class = '';
+                                }
+                                
+                                ?>
+
+                            <!-- accordian item-<?php echo faq_no; ?> -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="heading<?php echo $aria_expanded ; ?>">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $aria_expanded ; ?>" aria-expanded="true" aria-controls="collapse<?php echo $aria_expanded ; ?>">
+                                            <?php echo $faq['faq_title']; ?>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse<?php echo $aria_expanded ; ?>" class="panel-collapse collapse <?php echo $in_class; ?>" role="tabpanel" aria-labelledby="heading<?php echo $aria_expanded ; ?>">
+                                    <div class="panel-body">
+                                        <?php echo wpautop($faq['faq_content']); ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
