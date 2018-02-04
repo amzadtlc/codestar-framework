@@ -1,0 +1,209 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK SETTINGS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$settings           = array(
+  'menu_title'      => 'theme Options',
+  'menu_type'       => 'theme', // menu, submenu, options, theme, etc.
+  'menu_slug'       => 'neuron-theme-options',
+  'ajax_save'       => false,
+  'show_reset_all'  => false,
+  'framework_title' => 'Neuron Theme <small>by Amzad Hosen</small>',
+);
+
+// ===============================================================================================
+// -----------------------------------------------------------------------------------------------
+// FRAMEWORK OPTIONS
+// -----------------------------------------------------------------------------------------------
+// ===============================================================================================
+$options        = array();
+
+// ----------------------------------------
+// a option section for options overview  -
+// ----------------------------------------
+$options[]      = array(
+  'name'        => 'homepage',
+  'title'       => 'Home Page',
+  'icon'        => 'fa fa-home',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'enable_homepage_promo_section',
+      'type'    => 'switcher',
+      'title'   => 'Promo area on/of',
+      'desc'   => ' If you want to enable promo area, select on.',
+      'default'   => true,
+    ),
+    array(
+      'id'      => 'promo_title',
+      'type'    => 'text',
+      'title'   => 'Promo area title',
+      'desc'   => ' Type Promo area title',
+      'default'   => ' Welcome to the Neuron Finance',
+      'dependency'   => array( 'enable_homepage_promo_section', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'promo_content',
+      'type'    => 'textarea',
+      'title'   => 'Promo Content',
+      'desc'    => 'Type Promo Content Hear',
+      'dependency'   => array( 'enable_homepage_promo_section', '==', 'true' ),
+    ),
+     array(
+      'id'      => 'enable_homepage_contant',
+      'type'    => 'switcher',
+      'title'   => 'homepage contant area on/of',
+      'desc'   => ' If you want to enable homepage contant area, select on.',
+      'default'   => true,
+    ),
+    array(
+      'id'      => 'agency_title',
+      'type'    => 'text',
+      'title'   => 'Agency Title',
+      'desc'    => 'Type Agency title Hear',
+        'dependency'   => array( 'enable_homepage_contant', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'agency_content',
+      'type'    => 'textarea',
+      'title'   => 'Agency Content',
+      'desc'    => 'Type Agency Content Hear',
+        'dependency'   => array( 'enable_homepage_contant', '==', 'true' ),
+    ),  
+      array(
+      'id'      => 'agency_img',
+      'type'    => 'image',
+      'title'   => 'Agency image',
+      'desc'    => 'upload Agency image Hear',
+      'dependency'   => array( 'enable_homepage_contant', '==', 'true' ),
+    ),
+
+      array(
+      'id'      => 'services_title',
+      'type'    => 'text',
+      'title'   => 'Services Title',
+      'desc'    => 'Tyoe Services Title Hear',
+    ),
+
+
+      array(
+      'id'      => 'services_content',
+      'type'    => 'textarea',
+      'title'   => 'Services Content',
+      'desc'    => 'Tyoe Services Content Hear',
+    ),
+
+
+  ), // end: fields
+);
+
+//About Page Options
+
+$options[]      = array(
+  'name'        => 'about_us',
+  'title'       => 'About Us Page',
+  'icon'        => 'fa fa-star',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+      
+    array(
+      'id'      => 'enable_aboutpage_content_section',
+      'type'    => 'switcher',
+      'default'   => true,
+      'title'   => 'about page content on/of',
+      'desc'   => ' If you want to enable about page content, select on.',
+      
+    ), 
+    array(
+      'id'      => 'about_content_titles',
+      'type'    => 'text',
+      'title'   => 'About page Content  area title',
+      'desc'   => ' Type About page Content  area title',
+      'dependency'   => array( 'enable_aboutpage_content_section', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'about_content',
+      'type'    => 'textarea',
+      'title'   => 'About page Content ',
+      'desc'   => ' Type About page Content ',
+      'dependency'   => array( 'enable_aboutpage_content_section', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'about_content_img',
+      'type'    => 'image',
+      'title'   => 'About page Content Image ',
+      'desc'   => ' upload  About page Content  image',
+      'dependency'   => array( 'enable_aboutpage_content_section', '==', 'true' ),
+    ),
+      
+//      About page promo section
+      
+     array(
+      'id'      => 'enable_aboutpage_promo_section',
+      'type'    => 'switcher',
+      'title'   => 'Promo area on/of',
+      'desc'   => ' If you want to enable promo area, select on.',
+      'default'   => true,
+    ),
+
+
+  ), // end: fields
+);
+
+//Service pahe Options 
+
+$options[]      = array(
+  'name'        => 'about_us',
+  'title'       => 'Service Us Page',
+  'icon'        => 'fa fa-star',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+      
+          array(
+      'id'      => 'enable_srvicepage_content_section',
+      'type'    => 'switcher',
+      'default'   => true,
+      'title'   => 'Serice page content on/of',
+      'desc'   => ' If you want to enable service page content, select on.',
+      
+    ), 
+    array(
+      'id'      => 'service_content_titles',
+      'type'    => 'text',
+      'title'   => 'service page Content  area title',
+      'desc'   => ' Type service page Content  area title',
+      'dependency'   => array( 'enable_srvicepage_content_section', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'service_about_content',
+      'type'    => 'textarea',
+      'title'   => 'service page Content ',
+      'desc'   => ' Type Serice page Content ',
+      'dependency'   => array( 'enable_srvicepage_content_section', '==', 'true' ),
+    ),
+    array(
+      'id'      => 'service_content_img',
+      'type'    => 'image',
+      'title'   => 'Serice page Content Image ',
+      'desc'   => ' upload  service page Content  image',
+      'dependency'   => array( 'enable_srvicepage_content_section', '==', 'true' ),
+    ),
+      
+      ),
+    
+    );
+
+
+
+CSFramework::instance( $settings, $options );
